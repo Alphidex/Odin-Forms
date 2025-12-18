@@ -1,0 +1,169 @@
+/* Import a font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+
+/* Change the colours to something more christmasy: PLEASE? */
+:root {
+    --primary-color: #152b99f3;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr;
+    height: 100vh;
+}
+
+.image-container {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.image-container > h1 {
+    text-align: start;
+    padding: 0.5em;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.tribute, .tribute a {
+    font-size: 0.75rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    color: var(--light-color);
+}
+
+/* Form styling */
+.form-container {
+    background: var(--light-color);
+    border: 2px solid green;
+    padding: 5rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+        "header header"
+        "first-name last-name"
+        "email phone"
+        "password confirm-password"
+        "sign-up log-in";
+}
+
+.form-container > .form-header {
+    grid-area: header;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+form > .input-container {
+    align-self: center;
+    box-shadow: #343a4033 0px 4px 8px;
+    background: none;
+    width: min(100%, 20rem)
+}
+
+/* Floating label setup */
+.input-container label {
+    position: relative;
+    display: block;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 1.25rem 0.75rem 0.5rem 0.75rem; /* extra top padding for label */
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s ease;
+    background-color: var(--light-color);
+}
+
+.input-container input:focus {
+    border-color: var(--primary-color);
+}
+
+.input-container input + span {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%); 
+    color: var(--secondary-color);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    background-color: var(--light-color);
+    padding: 0 0.25rem;
+}
+
+.input-container input:not(:placeholder-shown):invalid {
+    border-color: var(--danger-color);
+}
+
+.input-container input:valid {
+    border-color: var(--success-color);
+}
+
+/* Raise label on focus or when input has content */
+.input-container input:focus + span,
+.input-container input:not(:placeholder-shown) + span {
+    top: 0;
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+button[type="submit"] {
+    grid-area: sign-up;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    align-self: center;
+    justify-self: center;
+}
+
+form > p {
+    grid-area: log-in;
+    align-self: center;
+    justify-self: center;
+}
+
+span > button {
+    border: none;
+    background-color: transparent;
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0;
+    margin-left: 0.5em;
+}
