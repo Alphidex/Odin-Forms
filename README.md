@@ -3,7 +3,7 @@
 ## Features
 - Basic modern sign-up page.
 - Included form pattern matching.
-- Inout placeholder floating when clicking on one.
+- Input placeholder floating when clicking on one.
 - Elements organized using grids.
 
 ## Technologies Used
